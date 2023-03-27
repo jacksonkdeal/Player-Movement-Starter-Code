@@ -2,10 +2,11 @@
 
 //Get player inputs
 
-key_left = keyboard_check(vk_left);
-key_right = keyboard_check(vk_right);
+key_left = keyboard_check(ord("A"));
+key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
-key_slide = keyboard_check_pressed(vk_control);
+key_slide = keyboard_check_pressed(vk_shift);
+left_click = mouse_check_button_pressed(mb_left);
 
 //Calc movoment horiz
 walljumpdelay = max(walljumpdelay-1,0);
@@ -126,6 +127,7 @@ on_wall = place_meeting(x + 1, y, obj_wall) - place_meeting(x - 1, y, obj_wall);
 going_right = hsp > 0;
 
 //Animation
+
 if (slidedelay > 0 || slidestuck) {
 	sprite_index = spr_player_slide;
 }
@@ -146,7 +148,14 @@ else if (on_wall != 0 && !on_ground && (key_left != 0 || key_right != 0)) {
 } else {
 	image_speed = 1;
 	if (hsp == 0) {
-		sprite_index = spr_player;
+		if(left_click)
+		{
+			sprite_index = spr_player_punch;
+		}
+		else if(sprite_index != spr_player_punch)
+		{
+			sprite_index = spr_player;
+		}
 	} else {
 		sprite_index = spr_player_run;
 	}
