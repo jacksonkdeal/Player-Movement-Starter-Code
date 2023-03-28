@@ -7,6 +7,7 @@ key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
 key_slide = keyboard_check_pressed(vk_shift);
 left_click = mouse_check_button_pressed(mb_left);
+right_click = mouse_check_button_pressed(mb_right)
 
 //Calc movoment horiz
 walljumpdelay = max(walljumpdelay-1,0);
@@ -34,6 +35,11 @@ if (slidedelay > 0){
 			slidestuck = true;
 		}
 	}
+}
+
+if(right_click && global.canStash)
+{
+	global.hasSword = !global.hasSword
 }
 
 //calc friction
@@ -150,14 +156,40 @@ else if (on_wall != 0 && !on_ground && (key_left != 0 || key_right != 0)) {
 	if (hsp == 0) {
 		if(left_click)
 		{
-			sprite_index = spr_player_punch;
+			if(!global.hasSword)
+			{
+				image_index = 0;
+				sprite_index = spr_player_punch;
+				alarm[0] = 32;
+			}
+			else
+			{
+				image_index = 0;
+				sprite_index = spr_player_sword_atk;
+				alarm[0] = 16;
+			}
 		}
-		else if(sprite_index != spr_player_punch)
+		else if(sprite_index != spr_player_punch and sprite_index != spr_player_sword_atk)
 		{
-			sprite_index = spr_player;
+			
+			if(global.hasSword)
+			{
+				sprite_index = spr_player_sword;
+			}
+			else
+			{
+				sprite_index = spr_player;
+			}
 		}
 	} else {
-		sprite_index = spr_player_run;
+		if(global.hasSword)
+		{
+			sprite_index = spr_player_sword_run;
+		}
+		else
+		{
+			sprite_index = spr_player_run;
+		}
 	}
 }
 
