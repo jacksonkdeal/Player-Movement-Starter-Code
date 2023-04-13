@@ -21,5 +21,6 @@
     {"name":"spr_player_sword_atk","order":7,"path":"sprites/spr_player_sword_atk/spr_player_sword_atk.yy",},
     {"name":"obj_enemy","order":3,"path":"objects/obj_enemy/obj_enemy.yy",},
     {"name":"spr_player_run","order":4,"path":"sprites/spr_player_run/spr_player_run.yy",},
+    {"name":"obj_control","order":4,"path":"objects/obj_control/obj_control.yy",},
   ],
 }

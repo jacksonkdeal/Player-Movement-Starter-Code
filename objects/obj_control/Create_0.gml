@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-speed = 2;
+demo_bot_1_id = inst_226C70E7;

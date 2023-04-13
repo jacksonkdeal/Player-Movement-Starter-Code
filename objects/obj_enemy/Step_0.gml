@@ -1,3 +1,13 @@
+//Horizontal collision
+if (place_meeting(x + speed, y, obj_wall)) {
+	while (!place_meeting(x + sign(speed), y, obj_wall)) {
+		x += sign(speed);
+	}
+	speed *= -1;
+}
+x += speed;
+
+// Animation
 if(!place_meeting(x, y + 1, obj_wall)) {
 	sprite_index = spr_enemy_jump;
 	image_speed = 0;
