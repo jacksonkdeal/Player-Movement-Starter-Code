@@ -133,68 +133,69 @@ on_wall = place_meeting(x + 1, y, obj_wall) - place_meeting(x - 1, y, obj_wall);
 going_right = hsp > 0;
 
 //Animation
-
-if (slidedelay > 0 || slidestuck) {
-	sprite_index = spr_player_slide;
-}
-else if (on_wall != 0 && !on_ground && (key_left != 0 || key_right != 0)) {
-	sprite_index = spr_player_wall;
-	image_index = 0;
-	image_speed = 0;
-} else if (!place_meeting(x, y + 1, obj_wall)) {
-	sprite_index = spr_player_jump;
-	image_speed = 0;
-	if (vsp > 0) {
-		image_index = 2;
-	} else if (vsp == 0) {
-		image_index = 1;	
-	} else {
-		image_index = 0;
+if(!global.dead)
+{
+	if (slidedelay > 0 || slidestuck) {
+		sprite_index = spr_player_slide;
 	}
-} else {
-	image_speed = 1;
-	if (hsp == 0) {
-		if(left_click)
-		{
-			if(!global.hasSword)
-			{
-				image_index = 0;
-				sprite_index = spr_player_punch;
-				alarm[0] = 32;
-			}
-			else
-			{
-				image_index = 0;
-				sprite_index = spr_player_sword_atk;
-				alarm[0] = 16;
-			}
+	else if (on_wall != 0 && !on_ground && (key_left != 0 || key_right != 0)) {
+		sprite_index = spr_player_wall;
+		image_index = 0;
+		image_speed = 0;
+	} else if (!place_meeting(x, y + 1, obj_wall)) {
+		sprite_index = spr_player_jump;
+		image_speed = 0;
+		if (vsp > 0) {
+			image_index = 2;
+		} else if (vsp == 0) {
+			image_index = 1;	
+		} else {
+			image_index = 0;
 		}
-		else if(sprite_index != spr_player_punch and sprite_index != spr_player_sword_atk)
-		{
+	} else {
+		image_speed = 1;
+		if (hsp == 0) {
+			if(left_click)
+			{
+				if(!global.hasSword)
+				{
+					image_index = 0;
+					sprite_index = spr_player_punch;
+					alarm[0] = 32;
+				}
+				else
+				{
+					image_index = 0;
+					sprite_index = spr_player_sword_atk;
+					alarm[0] = 16;
+				}
+			}
+			else if(sprite_index != spr_player_punch and sprite_index != spr_player_sword_atk)
+			{
 			
+				if(global.hasSword)
+				{
+					sprite_index = spr_player_sword;
+				}
+				else
+				{
+					sprite_index = spr_player;
+				}
+			}
+		} else {
 			if(global.hasSword)
 			{
-				sprite_index = spr_player_sword;
+				sprite_index = spr_player_sword_run;
 			}
 			else
 			{
-				sprite_index = spr_player;
+				sprite_index = spr_player_run;
 			}
 		}
-	} else {
-		if(global.hasSword)
-		{
-			sprite_index = spr_player_sword_run;
-		}
-		else
-		{
-			sprite_index = spr_player_run;
-		}
+	}
+
+	if(hsp != 0) {
+		image_xscale = sign(hsp);
 	}
 }
-
-if(hsp != 0) {
-	image_xscale = sign(hsp);
-}
-
 //debug area
