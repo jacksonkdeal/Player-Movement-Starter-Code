@@ -14,7 +14,6 @@ walljumpdelay = max(walljumpdelay-1,0);
 slidedelay = max(slidedelay-1,0);
 slideresetdelay = max(slideresetdelay-1,0);
 
-
 //disable movement for slide and wall jump
 if (walljumpdelay == 0 && slidedelay == 0 && !slidestuck) {
 	var _move = key_right - key_left;
@@ -43,7 +42,14 @@ if(right_click && global.canStash)
 }
 
 //calc friction
-hsp += _move * walksp;
+if(!global.dead)
+{
+	hsp += _move * walksp;
+}
+else
+{
+	hsp = 0;
+}
 if(_move == 0 && slidedelay == 0) { //normal friction with ground and air
 	var hsp_fric_final = hsp_fric_ground;
 	if (!on_ground) hsp_fric_final = hsp_fric_air;
@@ -101,10 +107,13 @@ if (on_ground) {
 	currjumps = 0;
 }
 
-if key_jump && (currjumps < maxjumps) {
-	vsp = -jumpsp;
-	currjumps += 1;
-	slidedelay = 0;
+if(!global.dead)
+{
+	if key_jump && (currjumps < maxjumps) {
+		vsp = -jumpsp;
+		currjumps += 1;
+		slidedelay = 0;
+	}
 }
 
 //Horizontal collision
@@ -197,5 +206,18 @@ if(!global.dead)
 	if(hsp != 0) {
 		image_xscale = sign(hsp);
 	}
+}
+
+if(global.dead and !global.dying)
+{
+	sprite_index = spr_player_death
+	global.dying = true;
+}
+
+if(sprite_index == spr_player_death and image_index == image_number - 1
+)
+{
+	image_speed = 0;
+	alarm[1] = 180;
 }
 //debug area

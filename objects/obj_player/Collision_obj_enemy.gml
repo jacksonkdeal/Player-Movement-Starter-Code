@@ -17,8 +17,5 @@ if(!global.dead)
 	else
 	{
 		global.dead = true;
-		sprite_index = spr_player_death
-		alarm[2] = 60;
-		alarm[1] = 120;
 	}
 }

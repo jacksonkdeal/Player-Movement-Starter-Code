@@ -3,6 +3,7 @@
 global.hasSword = false;
 global.canStash = false;
 global.dead = false;
+global.dying = false;
 
 hsp = 0;
 hsp_wjump = 9;

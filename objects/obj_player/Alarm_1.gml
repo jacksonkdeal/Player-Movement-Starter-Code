@@ -1,4 +1,3 @@
 /// @description Kill player
-
-instance_destroy();
+show_debug_message(": 3");
 room_restart();

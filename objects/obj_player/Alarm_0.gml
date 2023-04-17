@@ -1,3 +1,5 @@
+/// @description Give Sword
+
 if(global.hasSword)
 {
 	sprite_index = spr_player_sword;
