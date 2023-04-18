@@ -21,7 +21,8 @@
     {"name":"spr_player_sword_atk","order":7,"path":"sprites/spr_player_sword_atk/spr_player_sword_atk.yy",},
     {"name":"obj_enemy","order":3,"path":"objects/obj_enemy/obj_enemy.yy",},
     {"name":"spr_player_run","order":4,"path":"sprites/spr_player_run/spr_player_run.yy",},
+    {"name":"sEnemyTrigger","order":15,"path":"sprites/sEnemyTrigger/sEnemyTrigger.yy",},
     {"name":"spr_player_death","order":10,"path":"sprites/spr_player_death/spr_player_death.yy",},
-    {"name":"obj_control","order":4,"path":"objects/obj_control/obj_control.yy",},
+    {"name":"oEnemyTrigger","order":5,"path":"objects/oEnemyTrigger/oEnemyTrigger.yy",},
   ],
 }

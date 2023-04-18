@@ -55,9 +55,10 @@
     {"id":{"name":"spr_player_sword_atk","path":"sprites/spr_player_sword_atk/spr_player_sword_atk.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"spr_player_run","path":"sprites/spr_player_run/spr_player_run.yy",},},
+    {"id":{"name":"sEnemyTrigger","path":"sprites/sEnemyTrigger/sEnemyTrigger.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_player_death","path":"sprites/spr_player_death/spr_player_death.yy",},},
-    {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
+    {"id":{"name":"oEnemyTrigger","path":"objects/oEnemyTrigger/oEnemyTrigger.yy",},},
     {"id":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
   ],
   "RoomOrderNodes": [
