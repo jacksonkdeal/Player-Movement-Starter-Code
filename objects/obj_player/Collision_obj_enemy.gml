@@ -1,6 +1,6 @@
 if(!global.dead)
 {
-	if(obj_player.sprite_index == spr_player_punch and obj_player.image_index > 3 and obj_player.image_index < 6)
+	if(obj_player.sprite_index == spr_player_punch)
 	{
 		show_debug_message(":3");
 		with(other)
@@ -8,7 +8,7 @@ if(!global.dead)
 			instance_destroy();	
 		}
 	}
-	else if(obj_player.sprite_index == spr_player_sword_atk and obj_player.image_index > 0 and obj_player.image_index < 5)
+	else if(obj_player.sprite_index == spr_player_sword_atk)
 	{
 		show_debug_message(":3");
 		with(other)

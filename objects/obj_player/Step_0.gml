@@ -164,13 +164,11 @@ if(!global.dead)
 				{
 					image_index = 0;
 					sprite_index = spr_player_punch;
-					alarm[0] = 32;
 				}
 				else
 				{
 					image_index = 0;
 					sprite_index = spr_player_sword_atk;
-					alarm[0] = 16;
 				}
 			}
 			else if(sprite_index != spr_player_punch and sprite_index != spr_player_sword_atk)
