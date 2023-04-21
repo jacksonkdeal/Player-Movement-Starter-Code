@@ -32,6 +32,9 @@
     "name": "spr_boss",
     "path": "sprites/spr_boss/spr_boss.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_boss",
+    "path": "sprites/spr_boss/spr_boss.yy",
+  },
   "visible": true,
 }

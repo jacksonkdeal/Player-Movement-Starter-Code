@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
+    {"name":"boss","order":16,"path":"folders/Sprites/boss.yy",},
     {"name":"enemy","order":14,"path":"folders/Sprites/enemy.yy",},
     {"name":"player","order":13,"path":"folders/Sprites/player.yy",},
-    {"name":"boss","order":16,"path":"folders/Sprites/boss.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_boss","order":6,"path":"objects/obj_boss/obj_boss.yy",},
